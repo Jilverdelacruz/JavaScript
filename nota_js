@@ -1,0 +1,199 @@
+Consolas
+console.warn('prueba')
+console.error('prueba')
+console.clear();
+VARIABLES
+var  prueba = 'prueba'  --  Se cambiar cambiar el contenido de la variab
+     prueba = 'prueba2'
+     ejem2:
+     var prueba = 'a',
+         prueba1='b',
+         prueba3='c';
+let prueba = 'prueba ' tambien se puede reasignar valor
+const prueba = 'prueba' Siempte tienen que iniciar con un valor, no se puede reasignar valor
+METDOS STRING
+
+DIFERENCIA ENTRE UN METODO Y FUNCION 
+console.log(pasrseInt(numero1)) : esto es una funcion
+consele.log(numero1.toString()) : esto es un método
+
+console.log(producto.length) : contabilizar caracteres
+console.log(producto.indexOf('prueba')) : Indica en que posisicón empie la palabra
+console.log(producto.includes('prueba')) : si incluye o no el contenido
+console.log('la fruta' + producto + 'cuyo precio es ' + precio) : concatenar
+console.log(producto.concat(precio))   : concatenar
+console.log(`hola mundo ${producto}`)  :concatenar  se llama template string
+console.log(producto.trim())   : elimina espacio derecha izquierda
+console.log(producto.trimEnd()) : elimina espacio derecha 
+console.log(producto.trimStart()) : elimina espacio izquierda
+console.log(producto.replace('nueva', 'rica'))  : reemplaza la palabra
+console.log(precio.slice(0, 5))   : captura las letras segun la posisción idncada pero no funciona si primero poner el numero menor
+console.log(precio.substring(5, 0)) captura las letras segun la posisción idncada y si funciona si primero poner el numero menor
+console.log(precio.charAt(1)) : captura la posición de la letra
+const promocion = oferta.repeat(3) : Repite la cantidad de veces colocada
+console.log(precio.split(' ')) : Lista en un arreglo y los divide por lo que colocas en el paréntesis.
+console.log(producto.toUpperCase())  : Colocar a mayúscula
+console.log(precio.toLowerCase()) : Colocar a minúscula
+console.log(numero.toString()) : Convertir número a String
+PARA NÚMEROS 
+console.log(Math.PI);  : te muestra el valodr de PI
+console.log(Math.round(2.6)) : Te redondea a 3
+console.log(Math.ceil(2.3)) : te redondea siempre al mayor
+console.log(Math.floor(2.3)) : te redondea siempre al menor
+console.log(Math.sqrt(numero))  : te saca la raíz
+console.log(Math.pow(2,3)) :  valor , exponente
+console.log(Math.min( 3, 5, 7)) : el mínimo valor
+console.log(Math.max(3, 5, 7)) : máximo valor
+console.log(Math.random()) : random
+Se está redondeando en un rango deseado
+*Primero teniendo en cuenta que el rango usualmente los numero es 0.0222... , multiplicando por 30 lo mucho que llegaría es 29.7, luego  lo redondea al numero menor si es 29.7 sería 29 
+console.log(Math.floor(Math.random()*30))
+Numeros
+si colocas .3 = 3/100
+var numeros = (40 + 30 + 30 + 50) * .20 // hallamso le 20 por ciento del numero total
+numero++; primero te devuelve el mismo valor, recien a la siguiente llamada se aumenta.
+++numero; a la primera llamada aumentan
+numero +=4 : aumenta 4 más al resultado
+console.log(Number.isInteger(numero1)) : Pregunta si es numero resultado boleano
+console.log(Number.parseInt(numero1)) : convertir a numero
+console.log(Number.parseFloat(numero2)) : converti a decimal
+Comparaciones estrictas
+numero1 === numero2 :  no solo compara el valor sino el tipo de valor
+numero  !== numero2 :   no solo compara el valor sino el tipo de valor
+****OBJETO******
+
+Elobjeto viene a tener el valor de varias variables, que se divida entre llave  y valor y todo ello vrendía ser sus propiedades
+TOMAR EN CUENTA QUE SI ES UN TIPO DE VARIABLE CONST IGUAL SE PUEDE AGREGAR O QUITAR COMO SI FUERA UNA VARIABLE
+let persona= {
+    nombre: 'Julio',
+    año: 25,
+    casado: true
+}
+
+persona.menor=true  Podemos aherir una propiedad
+delete persona.año  quitar una propiedad
+
+console.log(persona) se muestra todo el OBJETO
+console.log(persona.años) se muestra la propiedades del objeto
+console.log(persona['años']) se muestra la propiedades del objeto
+
+Como extraer un valor del objeto y colocarlo en una variable
+let nombre = persona.nombre : Forma antigua
+let {año, casado} = persona  : lo que hace destructuring es todo en uno solo paso utiliza la llave y a la vez le pone dentro de una variable.
+
+Tambien hay un objeto dentro de otoros objetos
+let persona= {
+    nombre: 'Julio',
+    año: 25,
+    casado: true,
+    esposa:{
+      nombrea: 'julia',
+      años:26,
+      casado:true,
+      hijo:{
+        nombre: 'patricio',
+        edad:10
+      },
+      hija:{
+        nombre: 'maria',
+        edad:11
+      }
+    }
+}
+
+De esta manera se aplicaría destructuring
+let {nombre, esposa :{hijo, nombrea, hijo : {nombreo}, hija} } = persona  //   si hay un objeto dentor de otro objeto s utiliza :{} como se ve en el ejemplo.
+console.log(nombre) aqui saca el valor del objeto y lo coloca en una variable
+console.log(nombrea)
+console.log(hijo)
+console.log(hija)
+Para que cumpla el compartmiento de const en un objeto tenemos que congelarlo y ya no pueda ser modificado
+'use strict'
+const persona = {
+    nombre: 'jilver',
+    edad:26,
+    casado:true
+}
+Object.freeze(persona) aqui lo congelamos y ya no permitimos que jueguen con su comprtamiento
+// persona.hermano= 'juan'
+console.log(persona)
+console.log(Object.isFrozen(persona))
+
+OTRA OPCION ES SELLARLO, donde no permite ni agregar ni eliminar pero si editar una propiedad
+Object.seal(persona)
+persona.edad=27
+console.log(persona)
+
+ SPREAD OPERATOR fusionar 2 objetos
+const personas = Object.assign(persona, persona2) : PERMITE JUNTAR 2 OBJETOS
+const personas2 = {...persona, ...persona2} : PERMITE JUNTAR 2 OBJETOS
+
+console.log(Object.keys(persona2)) te retorna  las llaves
+console.log(Object.values(persona2)) te reorna valor
+console.log(Object.entries(persona2)) te retorna todos los valores en pares
+
+ARREGOS
+
+const paises = ['Peru', 'Bolivia', 'Brasil', 'Colombia',[ 'calle1', 'calle2', 'calle3']]
+console.log(paises[4][0])  : el resultado es calle1
+cantidadPaises= paises.length
+console.log(cantidadPaises) 
+ for(let i=0; i<= cantidadPaises; i ++){  // recorrer un arreglo
+     console.log(paises[i])
+ }
+
+FUNCIONES IMPERATIVAS
+personas.push(persona1)  Agregar al final un elemento al arreglo
+personas.unshift(persona2)  Agregar al al inicio un elemento al arreglo
+FUNCIONES DECLARATIVA NO MODIFICA VARIABLES SINO CREAR OTRA Y TRABAJA CON ELLA ... SPREAD OPERATOR
+let resultado = [ ...personas, persona1]; se cre otroa variable y ahi se adhiere los elementos
+    resultado=  [persona2, ...resultado]
+
+
+// frutas.shift()   : elimina el primer elemento
+// frutas.pop()     : elimina el último elemento
+frutas.splice(1,1)  : eliminar el elemento que se desea // primer parámetro para ver desde conde comienza a eliminar, segundo parámetros cuantos elementos van eliminar 
+console.log(frutas)
+
+DESTRUCTURING
+const [primero, ...segundo] = frutas : se destructura el arreglo  y lo pasa a una variable, en este ejemplo le estoy diicendo que a partir del segundo valor hasta donde termine lo pase a la variable segundo
+
+// personas.forEach(function(element){ :recorremos un arreglo con el forEach
+    //     console.log(element.nombre)
+    // })
+    const prueba = personas.map(function(elemento){ A diferenci de forEach  map lo puedes guardar en otra variable.
+       return  elemento.apellido
+    })
+    console.log(prueba)
+    
+
+ ****FUNCIONES   
+// funcion declarativa : lee dos veces el archivo primero para leer las funciones y la segunda para ver las ejecucaciones
+suma()
+function suma (){
+    console.log(2+2)
+}
+
+suma();
+
+resta()
+//funcion expresiva solo ejecuta una sola vez
+const resta = function (){
+    console.log(4-3)
+}
+ resta();
+ PARAMETROS PO DEFAULT
+ function prueba(nombre = '', apellido ='desconocido') {  : indica que el nombre por default será vacío
+ console.log(`mi nombre es ${nombre} y mi apellido es ${apellido}`)
+ }
+
+  segundo();  primero llamaos a esta funciona
+ function segundo(){
+     console.log('soy el segundo proceso')
+     primero();    termina la instruccion llamaos a la otra funcion
+ }
+
+ function primero(){
+     console.log('soy el primero')
+     tercer('papa')
+ }
