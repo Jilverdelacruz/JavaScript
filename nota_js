@@ -161,7 +161,7 @@ const [primero, ...segundo] = frutas : se destructura el arreglo  y lo pasa a un
 // personas.forEach(function(element){ :recorremos un arreglo con el forEach
     //     console.log(element.nombre)
     // })
-    const prueba = personas.map(function(elemento){ A diferenci de forEach  map lo puedes guardar en otra variable.
+    const prueba = personas.map(function(elemento){ A diferenci de forEach  map  crea un nuevo arreglo y lo manda a una variable
        return  elemento.apellido
     })
     console.log(prueba)
@@ -197,3 +197,277 @@ const resta = function (){
      console.log('soy el primero')
      tercer('papa')
  }
+ PRPIEDADD DE MÉTODOS
+ Cuando se realizan funciones dentro de las propiedades de un objeto
+ const spotify = {
+    pausar: function (){
+        console.log('Pausar una canción')
+    },
+spotify.pausar()
+
+// Arrow functions 
+La fucniones lo conviertes a flechas
+const spotify = function(cantante, musica){
+   return `reproducdiendo ${musica} de ${cantante}`
+}
+console.log(spotify('Hector Lavoe', 'yo soy el cantante'))
+
+const spotify2 =  (cantante, musica) => `reproducdiendo ${musica} de ${musica}` // primero la flecha reemplaza la palabra function y se pone a la derecha del parametro si solo es un parámetro no es necesario es tener parántesis ( si son más de 2 parámetros si amerita parentesis), adicionalmente si solo va una actividad dentro de las llaves no amerita las llaves es más asume que se rentorna ese valor
+console.log(spotify('Hector Lavoe', 'yo soy el cantante'))
+
+Arrow function en los for each y map
+// computador.forEach(producto => console.log(producto.placa))
+const listaComponentes = computador.map( componente => `los modelos de placas son ${componente.placa}`)
+
+//Arrow function en los métdos de propiedad
+const spotify = {
+     cancion:'',
+     cancion2:'',
+    pausar:() => console.log('Pausar una canción'),
+    adelantar: () => console.log('Ir a la siguiente cancion'),
+    set nuevaCancion(cancion){  Agregar un valor  a la propiedad
+        this.cancion= cancion
+        console.log(`Añaniendo nueva cancion`)
+    },
+    get obtenerCancion(){   obtener valor
+    console.log(`la cancion agregada es ${this.cancion}`)
+    }
+}
+spotify.cancion2= function(cancionN){
+    console.log(`cancion agregada ${cancionN} `)
+
+}
+
+spotify.playlist = nombre => console.log(`reproducir la canción ${nombre}`)
+
+
+console.log(spotify)
+spotify.pausar()
+spotify.playlist('Principe')
+
+spotify.nuevaCancion = 'Asi es la visa'
+spotify.obtenerCancion;
+
+spotify.cancion2=('prueba nueva')
+
+ESTRTUCTURA DE CONTROL
+ Para los if tomar en cuenta
+ if(!pago  || usuario) {  significa negativo , sifnifica o si cumpleta otra restricción OR, si es AND es con &&
+
+ }
+let pago ='tarjeta'
+switch (pago){ 
+    case 'efectivo':
+        console.log(`${pago}`)
+        break;    para que no pase a la siguiente funcion
+    case 'cheque':
+        console.log(`${pago}`)
+        break;
+    case 'tarjeta':
+        tarjet()
+        break;
+    default :   reemplaza al else
+     console.log('No has elegido el modo de pago o actualmente no tenemos el medio de pago indicado')
+     break;    
+}
+
+function tarjet(){
+    console.log('Se pagará con tarjeta')
+}
+
+let pago= 1000
+
+Usar el return para que finalice la ejecución
+function resultado (){
+    if( pago > 400){ // tomar en cuenta que la codicion con mayor valor debería realziarse primero vieo 76
+        console.log('excelente aporte')
+        return;                      //el return solo lo puedes usar solo en una funcion y lo utilizar cuando no usas el else if y si ejecuta esta funcion ya no se va a la otra si quitamos el return utilizará los dos if.
+        
+    }if(pago> 300 ){
+        console.log('muy buen aporte')
+        return;  
+    
+    }
+
+}
+
+resultado();
+
+OPERADOR TERNARIO
+let pago = 300
+let autenticado = false
+
+console.log(pago === 300 ? autenticado ? 'te encuentras autenticado y tienes el monto' : 'no esta autenticado' : 'no tienes el monto')
+
+ITERADORES
+// FOR LOP - PRACTICA JUNIOR 2 con arreglo
+/* producto = [
+    {nombre:'placa', precio:30},
+    {nombre:'fuente', precio:60},
+    {nombre:'memoria', precio:15}
+]
+   let cantidad= producto.length;
+   
+    for(let i=0; i < cantidad ; i++){
+       console.log(producto[i].nombre)
+   } 
+ */
+// PREGUNTA DE TRABAJO
+//BREACK: CORTA LA EJECUCIÓN DE UN FUNCION
+// CONTINUE: INTERSECTA UN ELEMENTO Y CONTINUA EJECUCION
+/*  CREAR UN FOR LOP QUE AL DETECTAR EL ELEMENTO 5 DETENGA LA EEJCUION 
+
+for(let i=0; i<10 ; i++){
+    if(i === 5){
+        console.log('cinco')
+        break;
+    }
+    console.log(i)
+}
+
+/*  CREAR UN FOR LOP QUE AL DETECTAR EL ELEMENTO 5 lo coloque en letras reemplace y que siga la ejecucion 
+
+for(let i=0 ; i<10; i++){
+    if(i === 5){
+        console.log('cinco')
+        continue;
+    }
+    console.log(i)
+}*/
+
+/*detecta cual es el producto que ya aderiste al carrito  tiene oferta  */
+
+producto = [
+    {nombre:'placa', precio:30 , oferta:false},
+    {nombre:'fuente', precio:60, oferta:true},
+    {nombre:'memoria', precio:15, oferta:true},
+    {nombre:'disco', precio:20}
+]
+
+let cantidad = producto.length
+for(let i=0; i<cantidad; i++){ 
+    if(producto[i].oferta){
+        console.log(`el producto ${producto[i].nombre} tiene descuento`)
+        continue;
+    }
+    console.log(producto[i].nombre)
+}
+
+/*tercera practica de trabajo de for 
+si es multiplo 3 fizz
+si es multiplo de 5 buzz
+si es multiplo de 3 y 5 fitbuz
+
+for(let i =0; i<100; i++){
+    if(i % 3 ===0 && i % 5 ===0){
+        console.log(`el numero ${i} es fizzbuzz`)
+    }
+    else if(i % 3 ===0){
+        console.log(`el numero ${i}  es fizz`)
+    }
+    else if(i % 5 ===0){
+        console.log(`el numero ${i}  es buzz`)
+    }
+    
+     else{
+         console.log(`el numero  ${i} no es multiple de 3 o 5`)
+     }
+     
+}*/
+WHILE
+numero =0;
+while (numero<10){
+    console.log(numero)
+    numero++;
+
+}*/
+numero = 99;
+do{
+    console.log(numero)
+    numero++;
+}while(numero<10)
+
+productos.forEach((producto, i) =>console.log(i, producto.nombre) )  // el sefundo parametro hace referencia al indice
+
+// for of es para recorrer arreglos, mientras que for in  para recorrer propiedades del objetos
+productos = [
+    {nombre:'placa', precio:30},
+    {nombre:'fuente', precio:60},
+    {nombre:'memoria', precio:15}
+]
+
+/* for (let producto of productos){
+    console.log(producto.nombre, producto.precio)
+} */
+
+producto = 
+    {nombre:'placa', precio:30, stock:true}
+
+for(let product in producto){
+    console.log(producto[product])
+}
+for(let [llave, valor] of Object.entries(producto)){
+    console.log(llave) // nueva forma para objetos S7
+}
+
+Metodos para arreglos
+*some e includes
+productos = [
+    {nombre:'placa', precio:30},
+    {nombre:'fuente', precio:60},
+    {nombre:'memoria', precio:15}
+]
+
+producto = 
+    ['televisor', 'radio', 'lavadora']
+
+/* PARA VER SI ESTÁ INCLUIDO EL ELEMENTO PARA PRODUCTO BASICO SE PUEDE UTILIZAR INCLUDES MIENTRAS QUE SOME ES 
+PARA PRODUCTOS VARIAS PROPIEDADES Y PARA EL BASICO
+//INCLUDES
+ let resultado = producto.includes('lavadora')
+ console.log(resultado) */
+
+ // SOME se puede utilizar en los casos
+
+ let resultado = producto.some((propiedad) => propiedad === 'televisor' )
+ console.log(resultado)
+
+ let resultado2= productos.some((producto)=> producto.nombre === 'placa')
+ console.log(resultado2)
+ 
+// every : todos los elementos tienen que cumplir la condicion true o false mientras que el some basta que uno cumpla la condicion
+
+let resultado = productos.every(producto => producto.nombre === 'placa')
+console.log(resultado)
+
+
+
+
+  finIndex
+  /* utilizat el findIndex es para encontrar el numero de indice esta el elemento buscado */
+
+/*  let resultado = producto.findIndex((element )=> element === 'lavadora')
+ if(resultado === -1){  // el valor te bota la posisicon si es positivo o si  es negativo te bota -1
+    console.log('el producto no se encuentra en la lista')
+ }else{
+    console.log(`el producto si esta en la lista numero ${resultado}`)
+} 
+let resultado = productos.findIndex((element)=> element.nombre === 'memoria')
+console.log(resultado)*/
+
+// reduce : es para sumar todos los elementos
+productos = [
+    {nombre:'placa', precio:30},
+    {nombre:'fuente', precio:60},
+    {nombre:'memoria', precio:15}
+]
+let totalPrecio= productos.reduce((total, producto) => total + producto.precio, 0)
+console.log(totalPrecio)
+
+  // filter : te ha im arreglo  con el filtrado realizado
+let resultado = productos.filter(producto => producto.nombre !== 'placa')
+console.log(resultado)
+
+// find: encuentra solo el primer elemento que cumpla la instrucción
+let resultado = productos.find(producto => producto.nombre === 'placa')
+console.log(resultado)
