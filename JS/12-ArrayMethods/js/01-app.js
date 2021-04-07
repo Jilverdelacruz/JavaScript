@@ -1,4 +1,4 @@
-/* productos = [
+/* /* productos = [
     {nombre:'placa', precio:30},
     {nombre:'fuente', precio:60},
     {nombre:'memoria', precio:15}
@@ -52,7 +52,7 @@ console.log(resultado)*/
 /*every : todos los elementos tienen que cumplir la condicion true o false mientras que el some basta que uno cumpla la condicion
 
 let resultado = productos.every(producto => producto.nombre === 'placa')
-console.log(resultado) */
+console.log(resultado) 
 
 productos = [
     {nombre:'placa', precio:30},
@@ -84,4 +84,4 @@ console.log(resultado2)
 //agregamosun objeto
 producto={nombre:'ccc', precio:60}
 let resultado3 = [...productos, ...productos2, producto]
-console.log(resultado3)
+console.log(resultado3) */

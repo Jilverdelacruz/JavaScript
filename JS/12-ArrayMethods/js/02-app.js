@@ -1,15 +1,19 @@
 frutas= ['manzana', 'durazno', 'pera']
 productos=[
-    {nombre:'lavadora', precio:30},
-    {nombre:'plancha', precio:70},
-    {nombre:'tv', precio:30},
-    {nombre:'tv', precio:60}
+    {nombre:'placaaa', precio:60},
+    {nombre:'fuente', precio:60},
+    {nombre:'memoria', precio:15}
 ]
 
 productos2=[
   
     {nombre:'rario', precio:30},
     {nombre:'licuadora', precio:60}
+]
+productos5=[
+  
+    {nombre:'rario', precio:30},
+    {nombre:'licuadora', precio:20}
 ]
 
 // includes
@@ -47,5 +51,5 @@ console.log(resultado8)
 
 //Spread Operator
 
-let resultado9= {productos }
+let resultado9= [...productos5, ...productos2]
 console.log(resultado9)
