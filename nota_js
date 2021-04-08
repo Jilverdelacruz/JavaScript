@@ -528,3 +528,23 @@ let resultado = document.querySelector('.navegacion').children // una coleccion 
 let resultado1= document.querySelector('a').parentElement // llama al padre
 let resultado2 = document.querySelector('.card').nextElementSibling // llama al hermano siguiente
 let resultado3 = document.querySelector('.card:nth-child(3)').previousElementSibling // llama a un hermnano antes
+
+let variable = document.createElement('a') // creamos un elemento
+variable2.appendChild(variable) // agregamos un elemento hijo
+console.log(variable2.children[2]) // identifico el a para luego colocar nuestro elemento
+
+variable2.insertBefore(variable, variable2.children[2]) // le estoy pidieno que lo mande entes de ese elemento
+
+variable.setAttribute('prueba', 'prueba2') // colocas un atributo
+variable.onclick= miFuncion // ejecuta una funcion
+let variable2= document.querySelector('.navegacion')
+variable2.appendChild(variable) // agregamos un elemento hijo
+console.log(variable2)
+
+
+console.log(variable2.children[2]) // identifico el a para luego colocar nuestro elemento
+
+variable2.insertBefore(variable, variable2.children[2]) // le estoy pidieno que lo mande entes de ese elemento
+
+function miFuncion(){
+    alert('probando funcion')

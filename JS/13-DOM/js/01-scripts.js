@@ -64,8 +64,29 @@ console.log(resultado3)*/
 
 /* let resultado = document.querySelector('a')
 resultado.remove()
-console.log(resultado) */
+console.log(resultado) 
 
 let resultado2 = document.querySelector('nav')
 
-resultado2.removeChild(resultado2.children[0])
+resultado2.removeChild(resultado2.children[0]) 
+
+let variable = document.createElement('a') // creamos un elemento
+variable.textContent='prueba'
+variable.setAttribute('prueba', 'prueba2') // colocas un atributo
+variable.href='www.gogole.com'
+variable.onclick= miFuncion // ejecuta una funcion
+console.log(variable)
+
+let variable2= document.querySelector('.navegacion')
+variable2.appendChild(variable) // agregamos un elemento hijo
+console.log(variable2)
+
+
+console.log(variable2.children[2]) // identifico el a para luego colocar nuestro elemento
+
+variable2.insertBefore(variable, variable2.children[2]) // le estoy pidieno que lo mande entes de ese elemento
+
+function miFuncion(){
+    alert('probando funcion')
+}*/
+
