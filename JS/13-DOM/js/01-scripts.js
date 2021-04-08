@@ -45,7 +45,7 @@ resultado3 = document.querySelector('.contenido-hero h1').innerHTML // se ha una
 console.log(resultado2)
 console.log(resultado3) 
 
-resultado4 = document.querySelector('.contenido-hero h1').textContent ='prueba' // se puede hacer con cluaiqer */
+resultado4 = document.querySelector('.contenido-hero h1').textContent ='prueba' // se puede hacer con cluaiqer 
 
 let resultado = document.querySelector('.contenido-hero h1')
 resultado.style.backgroundColor = 'red'
@@ -54,3 +54,18 @@ let resultado2= document.querySelector('.hacer .card')
 resultado2.classList.add('nueva' , 'nueva2') // agrega clases
 resultado2.classList.remove('card') // quita clases
 console.log(resultado2)
+
+let resultado = document.querySelector('.navegacion').children // una coleccion de nodos= es igualk a elementos hijos
+let resultado1= document.querySelector('a').parentElement // llama al padre
+let resultado2 = document.querySelector('.card').nextElementSibling // llama al hermano siguiente
+let resultado3 = document.querySelector('.card:nth-child(3)').previousElementSibling // llama a un hermnano antes
+
+console.log(resultado3)*/
+
+/* let resultado = document.querySelector('a')
+resultado.remove()
+console.log(resultado) */
+
+let resultado2 = document.querySelector('nav')
+
+resultado2.removeChild(resultado2.children[0])
