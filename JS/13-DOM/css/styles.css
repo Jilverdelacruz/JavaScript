@@ -62,7 +62,7 @@ img {
     color: var(--obscuro);
     text-decoration: none;
 }
-.btn-flotante.activo {
+.btn-flotante.active {
     background-color: var(--primario);
     color: var(--claro);
 }

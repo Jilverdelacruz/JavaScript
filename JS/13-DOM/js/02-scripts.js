@@ -1,16 +1,16 @@
-let piePagina= document.querySelector('.footer')
-let btnflotante= document.querySelector('.btn-flotante')
+const btnflotante = document.querySelector('.btn-flotante')
+const piePagina = document.querySelector('.footer')
 
-btnflotante.addEventListener('click', miFuncion)
+
+btnflotante.addEventListener('click', miFuncion);
 
 function miFuncion(){
-    if(piePagina.classList.contains('activo')){
+    if( piePagina.classList.contains('activo')){
         piePagina.classList.remove('activo');
-        btnflotante.classList.remove('activo')
+        btnflotante.classList.remove('active');
     }else
-    piePagina.classList.add('activo')
-    btnflotante.classList.add('activo')
- 
+    piePagina.classList.add('activo');
+    btnflotante.classList.add('active')
 
 }
-console.log(piePagina)
+console.log(btnflotante.classList)
