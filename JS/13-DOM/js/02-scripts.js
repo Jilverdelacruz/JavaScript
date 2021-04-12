@@ -8,9 +8,13 @@ function miFuncion(){
     if( piePagina.classList.contains('activo')){
         piePagina.classList.remove('activo');
         btnflotante.classList.remove('active');
-    }else
-    piePagina.classList.add('activo');
-    btnflotante.classList.add('active')
+        btnflotante.textContent = 'Idioma y moneda'
+    }else{
+        piePagina.classList.add('activo');
+        btnflotante.classList.add('active')
+        btnflotante.textContent = 'x Cerrar'
+    }
+    
 
 }
 console.log(btnflotante.classList)
