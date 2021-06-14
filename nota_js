@@ -132,7 +132,7 @@ console.log(Object.keys(persona2)) te retorna  las llaves
 console.log(Object.values(persona2)) te reorna valor
 console.log(Object.entries(persona2)) te retorna todos los valores en pares
 
-ARREGOS
+ARREGLOS
 
 const paises = ['Peru', 'Bolivia', 'Brasil', 'Colombia',[ 'calle1', 'calle2', 'calle3']]
 console.log(paises[4][0])  : el resultado es calle1
@@ -174,8 +174,6 @@ function suma (){
     console.log(2+2)
 }
 
-suma();
-
 resta()
 //funcion expresiva solo ejecuta una sola vez
 const resta = function (){
@@ -190,7 +188,7 @@ const resta = function (){
   segundo();  primero llamaos a esta funciona
  function segundo(){
      console.log('soy el segundo proceso')
-     primero();    termina la instruccion llamaos a la otra funcion
+     primero();  termina la instruccion llamaos a la otra funcion
  }
 
  function primero(){
@@ -410,7 +408,7 @@ for(let [llave, valor] of Object.entries(producto)){
     console.log(llave) // nueva forma para objetos S7
 }
 
-Metodos para arreglos
+****MÉTODOS PARA ARREGLO
 *some e includes
 productos = [
     {nombre:'placa', precio:30},
@@ -440,9 +438,6 @@ PARA PRODUCTOS VARIAS PROPIEDADES Y PARA EL BASICO
 let resultado = productos.every(producto => producto.nombre === 'placa')
 console.log(resultado)
 
-
-
-
   finIndex
   /* utilizat el findIndex es para encontrar el numero de indice esta el elemento buscado */
 
@@ -464,13 +459,14 @@ productos = [
 let totalPrecio= productos.reduce((total, producto) => total + producto.precio, 0)
 console.log(totalPrecio)
 
-  // filter : te ha im arreglo  con el filtrado realizado
+  // filter : te ha arreglado con el filtrado realizado
 let resultado = productos.filter(producto => producto.nombre !== 'placa')
 console.log(resultado)
 
 // find: encuentra solo el primer elemento que cumpla la instrucción
 let resultado = productos.find(producto => producto.nombre === 'placa')
 console.log(resultado)
+
 
 *****DOM
 Hace referencia a todo el contenido del archivo html
@@ -510,9 +506,9 @@ console.log(resultado)
 resultado2 = document.querySelector('.contenido-hero h1').textContent // si o si se ecnontrará pero en string
 resultado3 = document.querySelector('.contenido-hero h1').innerHTML // se ha una etiqueta dentro lo muestra */
 
-/* console.log(resultado)
+/*console.log(resultado)
 console.log(resultado2)
-console.log(resultado3) */
+console.log(resultado3)*/
 
 resultado4 = document.querySelector('.contenido-hero h1').textContent ='prueba' // se puede hacer con cluaiqer
 
@@ -575,7 +571,7 @@ nav.addEventListener('dblclick', () => {
 /* nav.addEventListener('mouseup', () => {
     console.log('ejecutando cuando  dejo el click')
 }) */
-
+            
 
 btnBuscar.addEventListener('keyup', () => {  // cuando presionas y sueltas la tecla
     console.log('hiciste lick')
@@ -669,3 +665,29 @@ info.appendChild(titulo2)
 function miFuncion(id){
     console.log('mi funcion ejecutada',id)
 }
+*****LOCALSTORAGE*****
+Solo permite colocar string, no número
+LOCALSTORAGE: Nos ayuda a mantener los datos así cerremos la pagina o apaguemos el equipo.
+SESSIONSTORAGE: SOLO MIENTAS LA PÁGINA ESTE ABIERTA.
+localStorage.setItem('persona','Javier') // 
+
+produc2String= JSON.stringify(product2) //la variable es un objeto por ende se tiene que convertir en string
+localStorage.setItem('product2', produc2String) // una vez convertido a string lo mandamos al localstorage
+const newProduct2= localStorage.getItem('product2') // Ahora obtenemos lo del local storage pero solo estará convertido en string
+console.log(JSON.parse(newProduct2)) // convertimos a lo que era, en este caso en objeto.
+localStorage.removeItem('product2') // eliminamos de lo cal storage
+Si en caso queremos actualizar
+
+Para actualizar en Local storage se extrae, se modifica y luego nuevamente se sube.
+
+product2={name:'Manzana', price:3}
+produc2String= JSON.stringify(product2)
+
+localStorage.setItem('product2', produc2String)
+
+const productArray= JSON.parse(localStorage.getItem('product2'))
+
+const nuevo={oferta:true, descuento:true}
+const resultProductArray = {...productArray, ...nuevo }
+produc2String= JSON.stringify(resultProductArray)
+localStorage.setItem('product2', produc2String)
