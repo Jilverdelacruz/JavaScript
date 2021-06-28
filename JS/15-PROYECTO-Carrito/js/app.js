@@ -84,7 +84,7 @@ function deleteCourse(e){
     btnDelete= e.target.classList.contains('borrar-curso')
     if(btnDelete){
         courseId= e.target.getAttribute('data-id')
-        console.log(courseId)
+        
     }
     courses = courses.filter((curso)=> curso.id !== courseId)
     showListArticles()

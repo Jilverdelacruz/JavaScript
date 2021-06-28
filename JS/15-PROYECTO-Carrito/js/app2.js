@@ -55,7 +55,7 @@ function showArticles(){
         <td><p>${article.title}</p></td>
         <td><p>${article.price}</p></td>
         <td><p>${article.quantity}</p></td>
-        <td><a class='borrar-curso' data-id='${article.id}' onclick='deleteArticle(${article.id})'>x</a>
+        <td><a class='borrar-curso' data-id='${article.id}' onclick="deleteArticle('${article.id}')">x</a> <!--Se está pasando como string para realizar la comparación en la función-->
         `
         listCar.appendChild(tr)
     })
@@ -63,13 +63,14 @@ function showArticles(){
 }
 
 function clearArticles(){
-    
-    listCar.innerHTML=''
+     listCar.innerHTML='' 
+    /* while(listCar.firstChild){
+        listCar.removeChild(listCar.firstChild)
+    } */
 }
 
 function deleteArticle(id){
- const  articlesRest= articles.filter(article => article.id != id )
-    articles=[...articlesRest]
-    console.log(articles)
+    articles= articles.filter(article => article.id !== id )
+    
     showArticles()
 }
