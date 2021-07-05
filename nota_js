@@ -60,9 +60,10 @@ console.log(Number.parseFloat(numero2)) : converti a decimal
 Comparaciones estrictas
 numero1 === numero2 :  no solo compara el valor sino el tipo de valor
 numero  !== numero2 :   no solo compara el valor sino el tipo de valor
+
 ****OBJETO******
 
-Elobjeto viene a tener el valor de varias variables, que se divida entre llave  y valor y todo ello vrendía ser sus propiedades
+El objeto viene a tener el valor de varias variables, que se divida entre llave  y valor y todo ello vrendía ser sus propiedades
 TOMAR EN CUENTA QUE SI ES UN TIPO DE VARIABLE CONST IGUAL SE PUEDE AGREGAR O QUITAR COMO SI FUERA UNA VARIABLE
 let persona= {
     nombre: 'Julio',
