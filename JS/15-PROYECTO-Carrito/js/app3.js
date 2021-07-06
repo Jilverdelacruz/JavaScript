@@ -1,11 +1,13 @@
 const divProducts= document.querySelector('#lista-cursos')
 const tbodyCar= document.querySelector('#carrito tbody')
+const cleanCar=document.querySelector('#vaciar-carrito')
 let car=[]
 
 loadFunctions()
 
 function loadFunctions(){
     divProducts.addEventListener('click', addProduct)
+    cleanCar.addEventListener('click', cleanProduct)
 }
 
 function addProduct(e){
@@ -24,19 +26,29 @@ function objProduct(e){
          price: divProduct.querySelector('span').textContent,
          quantity:1
      }
-     car=[...car, product]
-     showCar(car)
+     const exists = car.some(article => article.id === product.id)
+     if(exists){
+         car.forEach(article=>{
+            if(article.id === product.id){
+                article.quantity++
+            }
+         })
+     }else{
+        car=[...car, product]
+     }
+     
+     showCar()
 }
-function showCar(products){
+function showCar(){
     cleanProduct()
-    products.forEach(product=>{
+    car.forEach(product=>{
         const tr = document.createElement('tr')
         tr.innerHTML= `
         <td><img src='${product.image}' width='200px'></td>
         <td><p>${product.title}</p></td>
         <td><p>${product.price}</p></td>
         <td><p>${product.quantity}</p></td>
-        <td><a href='#' class='borrar-curso'>x</a></td>
+        <td><a href='#' class='borrar-curso' onclick="deleteProduct('${product.id}')">x</a></td>
         `
         tbodyCar.appendChild(tr)
     })
@@ -44,4 +56,9 @@ function showCar(products){
 }
 function cleanProduct(tr){
     tbodyCar.innerHTML=''
+}
+function deleteProduct(id){
+    car = car.filter(article=> article.id !== id)
+    showCar()
+    
 }
