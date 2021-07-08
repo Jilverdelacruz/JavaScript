@@ -491,7 +491,7 @@ let resultado= document.getElementsByClassName('contenedor') // te indica todos 
 console.log(resultado)
 resultado=document.getElementById('formulario') // te indica todos las etiquetas que tienen con el id fomurlario. 
 console.log(resultado)
-
+// querySelectorAll : busca en lista de elemento que coincida .. OJO TOMAR EN CUENTA // no se usará solo el queryselector porque cuando si no hay ninguno lo catalogará como nulo y no como 0 como lo hace el query...all por ende solo en el qeuery...all se puede usar el .length
 // querySelector : busca el primero que indicas por etiqueta class y id
 let resultado = document.querySelector('nav') // estoy buscnado por etiqueta
 console.log(resultado)
@@ -596,6 +596,7 @@ btnBuscar.addEventListener('input', (e) => {  // si le colocar un parametro llam
    }
 })
 ****** FORMULARIO
+
 /*  const btnFormu= document.querySelector('.formulario')
  btnFormu.addEventListener('submit', (e) => {
      e.preventDefault(); // evita que realiza por defaul es decir ya no le el action que hay en el fomurlairo
@@ -603,6 +604,10 @@ btnBuscar.addEventListener('input', (e) => {  // si le colocar un parametro llam
      console.log(e.target.action) // imprime la ruta del fomurlario (action)
  })
  */
+**** VALIDACIONES
+Existe el concepto de expresiones regulares pro ejemplo para el email:
+
+
 
  ******SCROOLL
  window.addEventListener('scroll', miFuncion)
