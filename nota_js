@@ -530,7 +530,7 @@ let variable = document.createElement('a') // creamos un elemento
 variable2.appendChild(variable) // agregamos un elemento hijo
 console.log(variable2.children[2]) // identifico el a para luego colocar nuestro elemento
 
-variable2.insertBefore(variable, variable2.children[2]) // le estoy pidieno que lo mande entes de ese elemento
+variable2.insertBefore(variable, variable2.children[2]) // variable2 vendría ser el padre,variable el elegido y vari..cildren.. es el hijo estra ra debajo de variable
 
 variable.setAttribute('prueba', 'prueba2') // colocas un atributo
 variable.onclick= miFuncion // ejecuta una funcion
@@ -540,8 +540,8 @@ console.log(variable2)
 
 
 console.log(variable2.children[2]) // identifico el a para luego colocar nuestro elemento
-
-variable2.insertBefore(variable, variable2.children[2]) // le estoy pidieno que lo mande entes de ese elemento
+formMail.insertBefore(msj, spinner) // el formMail es el padre, el msj es lo que se colocar'a, y el spinner es el punto de refencia
+variable2.insertBefore(variable, variable2.children[2]) 
 
 function miFuncion(){
     alert('probando funcion')
@@ -697,3 +697,12 @@ const nuevo={oferta:true, descuento:true}
 const resultProductArray = {...productArray, ...nuevo }
 produc2String= JSON.stringify(resultProductArray)
 localStorage.setItem('product2', produc2String)
+************************
+setTimeout(()=>{  // SE APICA SOLO UNA VEZ LA CANTIDADDE SEGUNDOS INDICADA
+    spinner.style.display='flex' // se está aplicando un clase css para activar 
+   }, 3000) // CANTIDAD DE SEGUNDOS equivale 3 segundos
+
+setInterval(()=>{ // se ejecuta varias veces la cantidad de segundos indicada
+    spinner.style.display='flex' // se está aplicando un clase css para activar 
+    console.log('ejecuto')
+   }, 3000)
