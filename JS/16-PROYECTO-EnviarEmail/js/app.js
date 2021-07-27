@@ -35,7 +35,7 @@ function validateForm(e){
         
       //  e.target.style.borderBottomColor='red'  //se le está agregando una clase de css a pesar de estar en tailwinds
       
-      // delete los errors
+      // eliminar los errores
       const error= document.querySelector('p.error')
       if(error){ // se coloca esta condicion porque cabe la probabilidad de que el usuario a la primera ingrese datos correctos entonces el elemento p con clase error nunca existirá por ende nunca podrá encontrar e elemento y saldra un error en la consola.
         error.remove();
